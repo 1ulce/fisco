@@ -1,4 +1,4 @@
-
+# coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "fisco/version"
@@ -8,15 +8,14 @@ Gem::Specification.new do |spec|
   spec.version       = Fisco::VERSION
   spec.authors       = ["1ulce"]
   spec.email         = ["shun.1ulce@gmail.com"]
-
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Fisco API wrapper.}
+  spec.description   = %q{Fisco API wrapper for bitcoin trade.}
+  spec.homepage      = "https://github.com/1ulce/fisco"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata["allowed_push_host"] = "https://github.com/1ulce/fisco"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."

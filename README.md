@@ -1,16 +1,14 @@
 # Fisco
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fisco`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Fisco API wrapper for ruby.
+inspired by gem 'zaif'(https://github.com/palon7/zaif-ruby/fork) by palon7. Thanks a lot.
+nothing any new feature from zaif gem above. just use on fisco.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'fisco'
-```
+    gem 'fisco'
 
 And then execute:
 
@@ -22,18 +20,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'fisco'
 
-## Development
+client = Fisco::Client.new(:api_key => FISCO_KEY, :api_secret => FISCO_SECRET)
+client.bid("btc", 30760, 0.0001)
+client.ask("btc", 30320, 0.0001)
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+client.get_info
+=> {"funds"=>{"jpy"=>0.0, "btc"=>0.0, "mona"=>0.0}, "deposit"=>{"btc"=>0.0, "jpy"=>0.0, "mona"=>0.0}, "rights"=>{"info"=>1, "trade"=>1, "withdraw"=>1, "personal_info"=>0, "id_info"=>0}, "trade_count"=>0, "open_orders"=>0, "server_time"=>1512732490}
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/fisco. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## Code of Conduct
-
-Everyone interacting in the Fisco project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/fisco/blob/master/CODE_OF_CONDUCT.md).
+1. Fork it ( https://github.com/1ulce/fisco/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
